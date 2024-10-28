@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs & Societies Catalog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .category-btn {
+            transition: transform 0.2s;
+        }
+        .category-btn:hover {
+            transform: translateY(-2px);
+        }
+        .club-card {
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .club-card:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .badge-arts { background-color: #e83e8c; }
+        .badge-academic { background-color: #0d6efd; }
+        .badge-sports { background-color: #198754; }
+        .badge-community { background-color: #ffc107; }
+        .badge-special { background-color: #6f42c1; }
+        
+        .club-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .club-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #dee2e6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header -->
+        <div class="mb-5 text-center">
+            <h1 class="display-4 mb-3">Clubs & Societies Catalog</h1>
+            <p class="lead text-muted">Discover and join amazing communities on campus</p>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="row mb-4">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search clubs...">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="bi bi-filter"></i>
+                    </span>
+                    <select class="form-select">
+                        <option selected>All Categories</option>
+                        <option>Arts & Culture</option>
+                        <option>Academic & Professional</option>
+                        <option>Sports & Fitness</option>
+                        <option>Community Service</option>
+                        <option>Special Interest Groups</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="row g-3 mb-5">
+            <div class="col-6 col-md">
+                <button class="category-btn btn btn-danger w-100 py-2">
+                    <i class="bi bi-palette me-2"></i>
+                    Arts & Culture
+                </button>
+            </div>
+            <div class="col-6 col-md">
+                <button class="category-btn btn btn-primary w-100 py-2">
+                    <i class="bi bi-book me-2"></i>
+                    Academic
+                </button>
+            </div>
+            <div class="col-6 col-md">
+                <button class="category-btn btn btn-success w-100 py-2">
+                    <i class="bi bi-trophy me-2"></i>
+                    Sports
+                </button>
+            </div>
+            <div class="col-6 col-md">
+                <button class="category-btn btn btn-warning w-100 py-2">
+                    <i class="bi bi-people me-2"></i>
+                    Community
+                </button>
+            </div>
+            <div class="col-6 col-md">
+                <button class="category-btn btn btn-purple w-100 py-2">
+                    <i class="bi bi-star me-2"></i>
+                    Special Interest
+                </button>
+            </div>
+        </div>
+
+        <!-- Clubs Grid -->
+        <div class="row g-4">
+            <!-- Tech Club Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card club-card h-100" data-bs-toggle="modal" data-bs-target="#techClubModal">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title">Tech Enthusiasts Club</h5>
+                            <span class="badge badge-academic text-white">Academic</span>
+                        </div>
+                        <p class="card-text text-muted mb-4">
+                            A community of technology lovers exploring latest trends in software, hardware, and digital innovation.
+                        </p>
+                        <div class="d-flex justify-content-between text-muted mb-3">
+                            <small>
+                                <i class="bi bi-people me-2"></i>156 members
+                            </small>
+                            <small>
+                                <i class="bi bi-calendar-event me-2"></i>Hackathon 2024
+                            </small>
+                        </div>
+                        <button class="btn btn-primary w-100">Join Club</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar cards for Dance Society and Basketball Club... -->
+            
+        </div>
+    </div>
+
+    <!-- Tech Club Modal -->
+    <div class="modal fade" id="techClubModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h4 class="modal-title">Tech Enthusiasts Club</h4>
+                        <span class="badge badge-academic text-white">Academic & Professional</span>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5 class="mb-3">About Us</h5>
+                            <p>The Tech Enthusiasts Club is a vibrant community dedicated to exploring and learning about the latest technological innovations. We organize workshops, hackathons, and tech talks to help members develop their skills and stay updated with industry trends.</p>
+                            
+                            <h5 class="mt-4 mb-3">Club Activities</h5>
+                            <ul class="list-unstyled club-timeline">
+                                <li class="timeline-item">
+                                    <strong>Weekly Tech Talks</strong>
+                                    <p>Industry experts share insights on emerging technologies</p>
+                                </li>
+                                <li class="timeline-item">
+                                    <strong>Monthly Hackathons</strong>
+                                    <p>24-hour coding challenges with exciting prizes</p>
+                                </li>
+                                <li class="timeline-item">
+                                    <strong>Project Collaborations</strong>
+                                    <p>Work on real-world projects with other members</p>
+                                </li>
+                            </ul>
+
+                            <h5 class="mt-4 mb-3">Upcoming Events</h5>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6>Annual Hackathon 2024</h6>
+                                    <p class="text-muted mb-2">
+                                        <i class="bi bi-calendar me-2"></i>November 15, 2024
+                                        <i class="bi bi-geo-alt ms-3 me-2"></i>Main Campus Hub
+                                    </p>
+                                    <p class="mb-0">Join us for our biggest event of the year! 24 hours of coding, learning, and fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Club Info</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <i class="bi bi-people me-2"></i>156 members
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-calendar me-2"></i>Founded 2020
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-clock me-2"></i>Meets Weekly
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-currency-dollar me-2"></i>Membership: Free
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Contact</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <i class="bi bi-envelope me-2"></i>tech.club@university.edu
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-instagram me-2"></i>@techclub
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-discord me-2"></i>Tech Club Server
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary w-100">Apply for Membership</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
